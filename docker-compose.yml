@@ -1,0 +1,30 @@
+version: "3.0"
+services:
+  service-backend:  
+   build:
+    dockerfile: ./backend-servlet/backend-servlet.dockerfile
+    context: .
+   image: lincolnppires/backend-servlet
+   container_name: container-backend
+   ports:
+    - 8080:8080 
+   networks: 
+    - rede-kubernete
+  
+  service-spring:
+   build:
+    dockerfile: ./microservices-springboot/microservices-springboot.dockerfile
+    context: .
+   image: lincolnppires/microservices-springboot
+   container_name: container-springboot
+   ports:
+    - 8081:8081 
+   networks: 
+    - rede-kubernete
+   depends_on:
+    - service-backend
+    
+networks:
+ rede-kubernete:
+  driver: bridge  
+
