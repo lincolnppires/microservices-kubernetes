@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: pod-backend
+spec:
+ containers:
+  - name: container-backend
+    image: lincolnppires/backend-servlet
+    ports:
+     - containerPort: 8080 
+ 
