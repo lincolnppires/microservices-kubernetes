@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: backend-deployment
+ labels:
+  app: backend-pod
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: backend-pod
+ template:
+  metadata:
+   labels:
+    app: backend-pod
+  spec:
+   containers:
+    - name: backend-container
+      image: lincolnppires/backend-servlet
+      ports:
+       - containerPort: 8080 
+ 

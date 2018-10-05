@@ -1,10 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
- name: pod-backend
+ name: backend-pod
+ labels:
+  app: backend-pod
 spec:
  containers:
-  - name: container-backend
+  - name: backend-container
     image: lincolnppires/backend-servlet
     ports:
      - containerPort: 8080 
