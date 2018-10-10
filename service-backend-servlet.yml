@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: service-teste
+spec:
+  type: LoadBalancer
+  ports:
+   - port: 8080
+  selector:
+   app: backend-pod
