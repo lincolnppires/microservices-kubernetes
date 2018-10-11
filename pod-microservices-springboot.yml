@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: microservices-pod
+ labels:
+  app: microservices-pod
+spec:
+ containers:
+  - name: microservices-springboot-container
+    image: lincolnppires/microservices-springboot
+    ports:
+     - containerPort: 8081 
+ 
